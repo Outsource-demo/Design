@@ -1,7 +1,7 @@
 properties([
     [$class: 'GithubProjectProperty',
     displayName: '',
-    projectUrlStr: 'https://github.com/Outsource-demo/Development.git'],
+    projectUrlStr: 'https://github.com/Outsource-demo/Design.git'],
     pipelineTriggers([githubPush()])])
 pipeline {
     agent any
@@ -13,7 +13,7 @@ pipeline {
         }
         stage ('Downstream-test'){
 			steps {
-     				build job: 'master'
+     				build job: 'Outsource-demo/Development/master'
 			}
 		}
     }
